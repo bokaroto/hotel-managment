@@ -1,3 +1,4 @@
+import ThemeProvider from '@/components/ThemeProvider/ThemeProvider';
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 import type { Metadata } from 'next';
@@ -24,11 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <main className="font-normal">
-          <Header />
-          {children}
-          <Footer />
-        </main>
+        <ThemeProvider>
+          <main className="font-normal">
+            <Header />
+            {children}
+            <Footer />
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
